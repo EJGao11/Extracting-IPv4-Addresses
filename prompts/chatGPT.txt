@@ -1,0 +1,52 @@
+Data: Sept 25, Prompt 1: 
+
+Write a C++ function that will be able to parse an IP address and a Port from a noise text stream.
+Outline of the function
+// Returns true if a valid address was found, false otherwise.
+// On success: outAddress holds the 32-bit value,
+// and outPort holds the port number, or -1 if no port was present.
+// On failure: outAddress is set to 0 and outPort is set to -1.
+bool extractIPv4(const std::string& str, unsigned long& outAddress, int& outPort);
+
+
+
+DO NOT USE ANY:
+Any string-to-number conversion function: atoi, atol, atoll, strtol, strtoul, strtod, stoi, stol, stoul, sscanf, scanf with numeric conversions
+Any address-parsing library function: inet_aton, inet_pton, inet_addr, or equivalents.
+std::regex, POSIX regex.h, or similar
+
+CAN USE:
+Standard character-classification functions (isdigit, etc.) are fine to use.
+Requirments:
+Exactly one valid address may be extracted per input line
+Reject anything that does not exactly match the grammar wrong octet count, empty octet, out-of-range octet or port, a disallowed leading zero, a second colon, a colon not immediately after the fourth octet, or a stray period/colon directly adjacent to an otherwise-valid address.
+On success, print: Extracted IPv4 address: A.B.C.D (decimal value: N, port: P) where N is the 32-bit decimal value and P is the port number or the literal text none.
+
+Overall layout of the code:
+There is the extract function and then a Main function that continuously prompts the user for input until the user enters END (case-sensitive). Main should print the results from the extract function
+
+Grammer:
+An address is four octets separated by periods (octet.octet.octet.octet), each octet 1–3 digits, value 0–255, no leading zero unless the value is exactly 0. An optional :port may follow the fourth octet: 1–5 digits, value 0–65535, same leading-zero rule. If a colon is present, the port must be fully valid or the entire match — address included — is rejected.
+
+Sample run:
+
+Enter a string (or 'END' to quit): connecting to 192.168.1.1 now
+Extracted IPv4 address: 192.168.1.1 (decimal value: 3232235777, port: none)
+Enter a string (or 'END' to quit): server=10.0.0.255:8080end
+Extracted IPv4 address: 10.0.0.255 (decimal value: 167772415, port: 8080)
+Enter a string (or 'END' to quit): 192a168.1.1.1
+Extracted IPv4 address: 168.1.1.1 (decimal value: 2818638081, port: none)
+Enter a string (or 'END' to quit): 192.168.1.1.
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): Connection from 192.168.1.1 refused
+Extracted IPv4 address: 192.168.1.1 (decimal value: 3232235777, port: none)
+Enter a string (or 'END' to quit): 192.168.01.1
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): 1.2.3.4:99999
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): 12.34.56
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): no number here
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): END
+Program terminated.
