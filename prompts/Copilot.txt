@@ -1,3 +1,34 @@
 Data: Sept 27, Model: MAI-Code-1.1-Flash, Prompt 1: 
 
 Take the files in src and make a make file that complies the code
+
+
+
+Data: Sept 27, Model: MAI-Code-1.1-Flash, Prompt 2: 
+
+With this sample create a test case suite that can run in a make file, and the results results should be saved to output.txt compared to answer.txt with a input file to feed input
+
+Enter a string (or 'END' to quit): connecting to 192.168.1.1 now
+Extracted IPv4 address: 192.168.1.1 (decimal value: 3232235777, port: none)
+Enter a string (or 'END' to quit): server=10.0.0.255:8080end
+Extracted IPv4 address: 10.0.0.255 (decimal value: 167772415, port: 8080)
+Enter a string (or 'END' to quit): 192a168.1.1.1
+Extracted IPv4 address: 168.1.1.1 (decimal value: 2818638081, port: none)
+Enter a string (or 'END' to quit): 192.168.1.1.
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): Connection from 192.168.1.1 refused
+Extracted IPv4 address: 192.168.1.1 (decimal value: 3232235777, port: none)
+Enter a string (or 'END' to quit): 192.168.01.1
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): 1.2.3.4:99999
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): 12.34.56
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): no number here
+Invalid input: no valid IPv4 address found
+Enter a string (or 'END' to quit): END
+Program terminated.
+
+Follow up prompt: 
+
+Move all the testing into a testing file
