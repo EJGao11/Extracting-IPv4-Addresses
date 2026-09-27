@@ -1,0 +1,3 @@
+Data: Sept 27, Model: MAI-Code-1.1-Flash, Prompt 1: 
+
+Take the files in src and make a make file that complies the code

@@ -1,4 +1,4 @@
-Data: Sept 25, Prompt 1: 
+Data: Sept 25, Model: GPT-5.6 Luna, Prompt 1: 
 
 Write a C++ function that will be able to parse an IP address and a Port from a noise text stream.
 Outline of the function
