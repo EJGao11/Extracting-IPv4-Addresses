@@ -1,3 +1,6 @@
+// Everything here was made by chatGPT unless there is a comment that says otherwise.
+
+// The extra testcase were hand made
 #include <iostream>
 #include <string>
 #include <cctype>

@@ -1,0 +1,8 @@
+# Hand Written .gitignore file
+
+src/*.exe
+src/ipExtractor
+src/.nfs*
+
+testing/output.txt
+
